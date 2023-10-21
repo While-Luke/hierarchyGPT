@@ -15,7 +15,7 @@ It is going to use the following programming languages and software:
 
 {languages}
 
-What files structure and directories do you think I would need to make to implement my ideas and methods into?
+What files do you think I would need to make to implement my ideas and methods into? List only the filenames separated by commas, do not add any other information or explanation.
 """
 
 
@@ -24,11 +24,17 @@ methods_prompt = """I have an idea for a project that I would like to make. Here
 
 {description}
 
-It is going to use the following file structure:
+It is going to use the following languages and software:
 
 {languages}
 
-Inside of the file "{file}", what methods would need to be implemented to make the project work? List only the method names separated by commas, do not add any other inforamtion or explanation.
+Inside of the file "{file}", what methods would need to be implemented to make the project work? List the results in the following form:
+
+method_name: Explanation
+method_name: Explanation
+and so on...
+
+Do not add any other information or explanation.
 """
 
 
@@ -37,11 +43,15 @@ globals_prompt = """I have an idea for a project that I would like to make. Here
 
 {description}
 
-It is going to use the following file structure:
+It is going to use the following languages and software:
 
 {languages}
 
-Implement what the very top of the file 
+Inside of the file "{file}", it is going to contain the following methods:
+
+{methods}
+
+Implement what the very top of this file should look like, including the import statements and any global variables if necessary. Do not implement any methods or any other code, and do not add any other information or explanation.
 """
 
 
@@ -49,4 +59,22 @@ Implement what the very top of the file
 coding_prompt = """I have an idea for a project that I would like to make. Here is a description of the project:
 
 {description}
+
+It is going to use the following languages and software:
+
+{languages}
+
+Inside of the file "{file}", it is going to contain the following methods:
+
+{methods}
+
+This file will also contain the following imports and globals:
+
+{globals}
+
+Implement the method {method}. Here is a description of what this method should do:
+
+{explanation}
+
+Do not give any extra information and explanation about this method, just the code for this one method.
 """
